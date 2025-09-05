@@ -1,7 +1,9 @@
-export function rejectAfterOneSecond(): Promise<never> {
-  return new Promise((_, reject) => {
+export function bai3(): Promise<string> {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject(new Error("Something went wrong"));
+      reject("Something went wrong");
     }, 1000);
   });
 }
+
+bai3().catch((data) => console.log(data));

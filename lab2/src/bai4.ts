@@ -1,11 +1,7 @@
-export function randomNumber(): Promise<number> {
-  return new Promise((resolve, reject) => {
-    const random = Math.floor(Math.random() * 100) + 1;
+export var bai4 = new Promise((resolve) => resolve(Math.random()));
 
-    if (random == null) {
-      reject(new Error("Random number too low!"));
-    } else {
-      resolve(random);
-    }
+bai4
+  .then((number) => console.log(number))
+  .catch((err) => {
+    console.log(err.message);
   });
-}
